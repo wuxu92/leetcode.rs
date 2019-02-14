@@ -2,7 +2,8 @@
 // mod search_in_rotated_sorted_array_33;
 // mod longest_valid_parentheses_32;
 // mod find_first_and_last_position_of_element_in_sorted_array_34;
-mod combination_sum_39;
+// mod combination_sum_39;
+mod permutations_46;
 
 #[cfg(test)]
 mod tests {
