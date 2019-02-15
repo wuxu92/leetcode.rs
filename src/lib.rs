@@ -13,7 +13,8 @@
 // mod climbing_stairs_70;
 // mod edit_distance_72;
 // mod sort_colors_75;
-mod subsets_78;
+// mod subsets_78;
+mod word_search_79;
 
 #[cfg(test)]
 mod tests {
