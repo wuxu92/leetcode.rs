@@ -8,13 +8,14 @@
 // mod maximum_subarray_53;
 // mod jump_game_55;
 // mod merge_intervals_56;
-mod unique_paths_62;
+// mod unique_paths_62;
+mod minimum_path_sum_64;
 
 #[cfg(test)]
 mod tests {
     use super::*;
     #[test]
     fn it_works() {
-        // assert_eq!(2 + 2, 4);
+        assert_eq!(2 + 2, 4);
     }
 }
