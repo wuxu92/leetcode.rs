@@ -10,7 +10,9 @@
 // mod merge_intervals_56;
 // mod unique_paths_62;
 // mod minimum_path_sum_64;
-mod climbing_stairs_70;
+// mod climbing_stairs_70;
+// mod edit_distance_72;
+mod sort_colors_75;
 
 #[cfg(test)]
 mod tests {
