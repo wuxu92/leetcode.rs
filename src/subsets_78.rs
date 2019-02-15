@@ -1,7 +1,7 @@
 // @url https://leetcode.com/problems/subsets/
 
 // recursive version
-pub fn subsets(nums: Vec<i32>) -> Vec<Vec<i32>> {
+pub fn subsets_1(nums: Vec<i32>) -> Vec<Vec<i32>> {
     let mut res : Vec<Vec<i32>> = vec![vec![]];
     // sort nums
     let mut nums = nums.clone();
@@ -21,6 +21,19 @@ pub fn subsets(nums: Vec<i32>) -> Vec<Vec<i32>> {
         }
     }
     process(&mut res, vec![], &mut nums);
+    res
+}
+
+// bfs no recursive
+pub fn subsets(nums: Vec<i32>) -> Vec<Vec<i32>> {
+    let mut res : Vec<Vec<i32>> = vec![vec![]];
+    for item in nums {
+        for i in 0..res.len() {
+            let mut v = res[i].clone();
+            v.push(item);
+            res.push(v);
+        }
+    }
     res
 }
 
