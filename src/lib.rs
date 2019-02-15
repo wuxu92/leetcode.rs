@@ -12,7 +12,8 @@
 // mod minimum_path_sum_64;
 // mod climbing_stairs_70;
 // mod edit_distance_72;
-mod sort_colors_75;
+// mod sort_colors_75;
+mod subsets_78;
 
 #[cfg(test)]
 mod tests {
