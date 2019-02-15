@@ -6,7 +6,8 @@
 // mod permutations_46;
 // mod group_anagrams_49;
 // mod maximum_subarray_53;
-mod jump_game_55;
+// mod jump_game_55;
+mod merge_intervals_56;
 
 #[cfg(test)]
 mod tests {
