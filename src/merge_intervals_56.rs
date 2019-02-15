@@ -1,3 +1,5 @@
+// @url: https://leetcode.com/problems/merge-intervals
+//
 // Definition for an interval.
 #[derive(Debug, PartialEq, Eq)]
 pub struct Interval {
