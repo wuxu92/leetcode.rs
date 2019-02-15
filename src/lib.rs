@@ -9,7 +9,8 @@
 // mod jump_game_55;
 // mod merge_intervals_56;
 // mod unique_paths_62;
-mod minimum_path_sum_64;
+// mod minimum_path_sum_64;
+mod climbing_stairs_70;
 
 #[cfg(test)]
 mod tests {

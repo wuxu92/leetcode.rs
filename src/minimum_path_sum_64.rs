@@ -19,7 +19,6 @@ pub fn min_path_sum(grid: Vec<Vec<i32>>) -> i32 {
             let up = scores[i*m+j-m];
             let left = scores[i*m+j-1];
             scores[i*m+j] = grid[i][j] + if up < left {up} else {left};
-            println!("i:{}, j:{}, scores: {:?}.", i, j, scores);
         }
     }
     scores[n*m-1]
