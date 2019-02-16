@@ -13,3 +13,21 @@ read -r cols < <(head -n 1 "$file" | awk '{print NF}')
 for i in $(seq 1 $cols); do
     awk -v i=$i '{print $i}' "$file" | xargs
 done
+
+
+echo awk version
+# awk version
+awk '
+{
+    for (l=1; l<=NF; l++) {
+        if (NR == 1) {
+            grid[l] = $l;
+        } else {
+            grid[l] = grid[l] FS $l;
+        }
+    }
+}
+END {
+    for (r=1; r<=NF; r++) { print grid[r]; }
+}
+' $file
