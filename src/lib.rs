@@ -14,7 +14,8 @@
 // mod edit_distance_72;
 // mod sort_colors_75;
 // mod subsets_78;
-mod word_search_79;
+// mod word_search_79;
+mod _4sum_18;
 
 #[cfg(test)]
 mod tests {
