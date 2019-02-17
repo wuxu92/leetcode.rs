@@ -1,6 +1,6 @@
 // @url https://leetcode.com/problems/combination-sum-ii/
 
-#[allow(unused_imports)]
+#[allow(dead_code)]
 pub fn combination_sum2(candidates: Vec<i32>, target: i32) -> Vec<Vec<i32>> {
     let mut candi = candidates;
     candi.sort_unstable();
