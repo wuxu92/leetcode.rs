@@ -16,7 +16,8 @@
 // mod subsets_78;
 // mod word_search_79;
 // mod _4sum_18;
-mod add_two_numbers_2;
+// mod add_two_numbers_2;
+mod combination_sum_ii_40;
 
 #[cfg(test)]
 mod tests {

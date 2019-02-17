@@ -20,12 +20,10 @@ impl ListNode {
 
 #[allow(dead_code)]
 pub fn add_two_numbers(l1: Option<Box<ListNode>>, l2: Option<Box<ListNode>>) -> Option<Box<ListNode>> {
-    let mut l1 = l1;
-    let mut l2 = l2;
+    let (mut l1, mut l2, mut carry) = (l1, l2, 0);
     let mut obj : Vec<i32> = Vec::new();
-
     let mut res : Option<Box<ListNode>> = None;
-    let mut carry = 0;
+    
     loop {
         if l1.is_none() && l2.is_none() { break; }
         if let Some(n1) = &l1 { carry += n1.val; }
@@ -36,7 +34,6 @@ pub fn add_two_numbers(l1: Option<Box<ListNode>>, l2: Option<Box<ListNode>>) -> 
         if l2 != None { l2 = l2.unwrap().next; }
     }
     if carry == 1 { obj.push(1); }
-    // reverse
     for &i in obj.iter().rev() {
         let mut item = Box::new(ListNode::new(i));
         item.next = res.take();
