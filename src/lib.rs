@@ -23,7 +23,8 @@ mod test;
 // mod valid_sudoku_36;
 // mod backspace_string_compare_844;
 // mod rotate_image_48;
-mod binary_tree_inorder_traversal_94;
+// mod binary_tree_inorder_traversal_94;
+mod validate_binary_search_tree_98;
 
 #[cfg(test)]
 mod tests {
