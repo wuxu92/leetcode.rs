@@ -21,4 +21,17 @@ mod tests {
     fn it_works_01() {
         vec_test();
     }
+
+    fn test_swap_01() {
+        let (a, b) = (10, 100);
+        // (a, b) = (b, a); // will compile error
+        assert_eq!((a, b), (100, 10));
+    }
+
+    #[test]
+    fn test_range() {
+        for i in 10..9 {
+            println!("range: {}.", i);
+        }
+    }
 }

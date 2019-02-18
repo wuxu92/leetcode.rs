@@ -21,7 +21,8 @@ mod test;
 // mod combination_sum_ii_40;
 // mod integer_to_roman_12;
 // mod valid_sudoku_36;
-mod backspace_string_compare_844;
+// mod backspace_string_compare_844;
+mod rotate_image_48;
 
 #[cfg(test)]
 mod tests {
