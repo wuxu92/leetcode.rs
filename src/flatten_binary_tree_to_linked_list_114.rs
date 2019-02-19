@@ -5,7 +5,7 @@ use std::cell::RefCell;
 use utils::TreeNode;
 
 #[allow(dead_code)]
-pub fn flatten(root: &mut Option<Rc<RefCell<TreeNode>>>) {
+pub fn flatten(root: &Option<Rc<RefCell<TreeNode>>>) {
 
     fn process(root: Rc<RefCell<TreeNode>>) -> Rc<RefCell<TreeNode>> {
         // if let Some(ref left) = node.borrow().left {
@@ -40,7 +40,7 @@ mod tests {
         let nil = std::i32::MIN;
         let mut input = build_tree(vec![1,2,3,4,5,nil,6]);
         // println!("input: {:?}.", input);
-        flatten(&mut input);
+        flatten(&input);
         println!("{:?}", input);
     }
 }
