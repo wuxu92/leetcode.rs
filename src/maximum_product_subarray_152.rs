@@ -1,7 +1,7 @@
 // @url https://leetcode.com/problems/maximum-product-subarray/
 
 #[allow(dead_code)]
-pub fn max_product(nums: Vec<i32>) -> i32 {
+pub fn max_product_01(nums: Vec<i32>) -> i32 {
 
     // max of no-zore slice
     fn sum (x: &[i32]) -> i32 {
@@ -64,6 +64,33 @@ pub fn max_product(nums: Vec<i32>) -> i32 {
     }
     res
 }
+
+#[allow(dead_code)]
+pub fn max_product(nums: Vec<i32>) -> i32 {
+    // use imin imax solution
+    if nums.len() == 0 { return 0 }
+    let (mut res, mut imax, mut imin) = (nums[0], nums[0], nums[0]);
+    fn max(i: i32, j: i32) -> i32 {
+        if i >= j { i } else { j }
+    }
+    fn min (i: i32, j: i32) -> i32 {
+        if i <= j { i } else { j }
+    }
+    for idx in 1..nums.len() {
+        let v = nums[idx];
+        if v < 0 {
+            let t = imax;
+            imax = imin; imin = t;
+        }
+        imax = max(imax * v, v);
+        imin = min(imin*v, v);
+        // println!("imax {}, imin {}, r {}.", imax, imin, res);
+        res = max(res, imax);
+    }
+    res
+}
+
+
 
 #[cfg(test)]
 mod tests {
