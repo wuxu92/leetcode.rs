@@ -45,6 +45,32 @@ pub fn build_tree(vec: Vec<i32>) -> Option<Rc<RefCell<TreeNode>>> {
     Some(ret)
 }
 
+#[derive(PartialEq, Eq, Debug)]
+pub struct ListNode {
+    pub val: i32,
+    pub next: Option<Box<ListNode>>
+}
+
+impl ListNode {
+    #[inline]
+    #[allow(dead_code)]
+    pub fn new(val: i32) -> Self {
+        ListNode {
+            next: None,
+            val
+        }
+    }
+}
+
+#[allow(dead_code)]
+pub fn build_listnode (vec: Vec<i32>) -> Option<Box<ListNode>> {
+    let mut res : Option<Box<ListNode>> = None;
+    for v in vec.iter().rev() {
+        res = Some(Box::new(ListNode {val: *v, next: res }));
+    }
+    res
+}
+
 #[cfg(test)]
 mod tests {
     #[allow(unused_imports)]

@@ -14,6 +14,15 @@ fn vec_test() {
     println!("{:?}", input[0..9][1]);
 }
 
+use utils::ListNode;
+use std::boxed::Box;
+fn test_box() {
+    let mut node = ListNode::new(1);
+    let mut b1 = Box::new(&mut node);
+    let mut b2 = b1;
+    b2.next = Some(Box::new(ListNode::new(2)));
+}
+
 #[cfg(test)]
 mod tests {
     #[allow(unused_imports)]

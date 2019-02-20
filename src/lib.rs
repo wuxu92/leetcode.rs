@@ -1,7 +1,7 @@
 // extern crate leetcode;
 
 mod utils;
-mod test;
+// mod test;
 // mod next_permutation_31;
 // mod search_in_rotated_sorted_array_33;
 // mod longest_valid_parentheses_32;
