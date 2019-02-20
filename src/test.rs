@@ -43,4 +43,21 @@ mod tests {
             println!("range: {}.", i);
         }
     }
+
+    #[test]
+    fn test_range2() {
+        for i in 0..0 { println!("item: {}", i); }
+        let vec = vec![1,2,3,4];
+        println!("vec: {:?}", vec.get(0..0));
+        println!("vec: {:?}", vec.get(0..1));
+        println!("vec: {:?}", vec.get(3..3));
+    }
+    #[test]
+    fn test_range3() {
+        for i in 0..0 { println!("item: {}", i); }
+        let vec = &[1,2,3,4];
+        println!("vec: {:?}", &vec[0..0]);
+        println!("vec: {:?}", &vec[0..1]);
+        println!("vec: {:?}", &vec[4..3]);
+    }
 }

@@ -31,7 +31,8 @@ mod utils;
 // mod binary_tree_level_order_traversal_102;
 // mod flatten_binary_tree_to_linked_list_114;
 // mod word_break_139;
-mod sort_list_148;
+// mod sort_list_148;
+mod maximum_product_subarray_152;
 
 #[cfg(test)]
 mod tests {
