@@ -32,7 +32,8 @@ mod utils;
 // mod flatten_binary_tree_to_linked_list_114;
 // mod word_break_139;
 // mod sort_list_148;
-mod maximum_product_subarray_152;
+// mod maximum_product_subarray_152;
+mod course_schedule_207;
 
 #[cfg(test)]
 mod tests {
