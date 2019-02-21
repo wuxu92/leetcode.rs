@@ -41,7 +41,7 @@ pub fn can_finish_1(num_courses: i32, prerequisites: Vec<Vec<i32>>) -> bool {
 
 // DFS
 #[allow(dead_code)]
-pub fn can_finish(num_courses: i32, prerequisites: Vec<Vec<i32>>) -> bool {
+pub fn can_finish_2(num_courses: i32, prerequisites: Vec<Vec<i32>>) -> bool {
     if prerequisites.len() == 0 { return true }
     let num = num_courses as usize;
     let mut grid : Vec<Vec<bool>> = vec![];
@@ -67,6 +67,34 @@ pub fn can_finish(num_courses: i32, prerequisites: Vec<Vec<i32>>) -> bool {
     }
     for i in 0..num {
         if process(&mut grid, &mut marker, i) { return false }
+    }
+    true
+}
+
+// Indegree solution
+#[allow(dead_code)]
+pub fn can_finish(num_courses: i32, prerequisites: Vec<Vec<i32>>) -> bool {
+    if prerequisites.len() == 0 { return true }
+    let num = num_courses as usize;
+    let mut grid : Vec<Vec<usize>> = vec![];
+    for _i in 0..num_courses { grid.push(vec![]); }
+    let mut degree : Vec<i32> = vec![0; num];
+
+    for v in prerequisites.iter() {
+        // can reduce v0's indgree when v1 been 0
+        grid[v[1] as usize].push(v[0] as usize);
+        degree[v[0] as usize] += 1;
+    }
+    // find a 0 in-degree node and process
+    for _idx in 0..num {
+        let mut col = 0;
+        while col < num {
+            if degree[col] == 0 { break }
+            col += 1;
+        }
+        if col == num { return false }
+        degree[col] = -1;
+        for row in grid[col].iter() { degree[*row] -= 1; }
     }
     true
 }
