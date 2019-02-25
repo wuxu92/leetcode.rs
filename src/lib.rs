@@ -35,7 +35,8 @@ mod utils;
 // mod maximum_product_subarray_152;
 // mod course_schedule_207;
 // mod implement_trie_prefix_tree_208;
-mod sudoku_solver_37;
+// mod sudoku_solver_37;
+mod maximal_square_221;
 
 #[cfg(test)]
 mod tests {
