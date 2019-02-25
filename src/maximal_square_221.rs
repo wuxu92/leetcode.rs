@@ -1,6 +1,7 @@
 // @url https://leetcode.com/problems/maximal-square/
 
-pub fn maximal_square(matrix: Vec<Vec<char>>) -> i32 {
+#[allow(dead_code)]
+pub fn maximal_square_01(matrix: Vec<Vec<char>>) -> i32 {
     if matrix.len() == 0 || matrix[0].len() == 0 { return 0 }
     let mut max = 0;
     let (n, m) = (matrix.len(), matrix[0].len());
@@ -24,6 +25,31 @@ pub fn maximal_square(matrix: Vec<Vec<char>>) -> i32 {
             }
             mark[i][j] = size;
             if mark[i][j]+ 1 > max { max = mark[i][j]; }
+        }
+    }
+    (max * max) as i32
+}
+
+// dp
+#[allow(dead_code)]
+pub fn maximal_square(matrix: Vec<Vec<char>>) -> i32 {
+    if matrix.len() == 0 || matrix[0].len() == 0 { return 0 }
+    let mut max = 0;
+    let (n, m) = (matrix.len(), matrix[0].len());
+    let mut mark : Vec<Vec<usize>> = vec![vec![0;m]; n];
+    let num_0 = '0' as usize;
+    fn min(i: usize, j: usize, k: usize) -> usize {
+        let min = if i<j {i} else {j};
+        return if min < k { min } else {k};
+    }
+    for i in 0..n {
+        for j in 0..m {
+            if i==0 || j==0 || matrix[i][j] == '0' {
+                mark[i][j] = matrix[i][j] as usize - num_0; ;
+            } else {
+                mark[i][j] = min(mark[i-1][j-1], mark[i-1][j], mark[i][j-1]) + 1;
+            }
+            if mark[i][j] > max { max = mark[i][j]; }
         }
     }
     (max * max) as i32
@@ -78,5 +104,12 @@ mod tests {
             vec!['0','1','1','1']
         ];
         assert_eq!(maximal_square(v), 9);
+    }
+    #[test]
+    fn it_works_06() {
+        let v = vec![
+            vec!['1'],
+        ];
+        assert_eq!(maximal_square(v), 1);
     }
 }
