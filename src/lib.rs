@@ -1,5 +1,4 @@
 // extern crate leetcode;
-
 mod utils;
 // mod test;
 // mod next_permutation_31;
@@ -37,7 +36,9 @@ mod utils;
 // mod implement_trie_prefix_tree_208;
 // mod sudoku_solver_37;
 // mod maximal_square_221;
-mod product_of_array_except_self_238;
+// mod product_of_array_except_self_238;
+// mod sliding_window_maximum_239;
+mod perfect_squares_279;
 
 #[cfg(test)]
 mod tests {
