@@ -40,7 +40,8 @@ mod utils;
 // mod sliding_window_maximum_239;
 // mod perfect_squares_279;
 // mod move_zeroes_283;
-mod find_the_duplicate_number_287;
+// mod find_the_duplicate_number_287;
+mod longest_increasing_subsequence_300;
 
 #[cfg(test)]
 mod tests {
