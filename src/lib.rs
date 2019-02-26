@@ -39,7 +39,8 @@ mod utils;
 // mod product_of_array_except_self_238;
 // mod sliding_window_maximum_239;
 // mod perfect_squares_279;
-mod move_zeroes_283;
+// mod move_zeroes_283;
+mod find_the_duplicate_number_287;
 
 #[cfg(test)]
 mod tests {
