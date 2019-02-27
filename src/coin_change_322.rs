@@ -12,7 +12,7 @@ pub fn coin_change(coins: Vec<i32>, amount: i32) -> i32 {
         for &j in coins.iter() {
             if j <= 0 { continue }
             let dst = i + j as usize;
-            if dst > amount+1 { continue }
+            if dst > amount+1 { break;}
             if dp[i] + 1 < dp[dst] || dp[dst] == -1 { dp[dst] = dp[i] + 1; }
         }
         // println!("dp: {:?}", dp);
