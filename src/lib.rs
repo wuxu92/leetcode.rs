@@ -46,7 +46,9 @@ mod utils;
 // mod coin_change_322;
 // mod counting_bits_338;
 // mod top_k_frequent_elements_347;
-mod majority_element_169;
+// mod majority_element_169;
+// mod house_robber_198;
+mod valid_parentheses_20;
 
 #[cfg(test)]
 mod tests {
