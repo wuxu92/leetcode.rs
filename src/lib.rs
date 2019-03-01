@@ -48,7 +48,8 @@ mod utils;
 // mod top_k_frequent_elements_347;
 // mod majority_element_169;
 // mod house_robber_198;
-mod valid_parentheses_20;
+// mod valid_parentheses_20;
+mod decode_string_394;
 
 #[cfg(test)]
 mod tests {
