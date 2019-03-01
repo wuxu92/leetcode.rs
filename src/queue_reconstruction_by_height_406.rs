@@ -22,19 +22,14 @@ pub fn reconstruct_queue_1(people: Vec<Vec<i32>>) -> Vec<Vec<i32>> {
 
 #[allow(dead_code)]
 pub fn reconstruct_queue(people: Vec<Vec<i32>>) -> Vec<Vec<i32>> {
-    let mut res : Vec<Vec<i32>> = Vec::new();
-    if people.len() == 0 { return res }
-    let (mut pp, mut idx) = (people, 0);
+    let (mut res, mut pp) = (Vec::new(), people);
+    if pp.len() == 0 { return res }
     pp.sort_unstable_by(|a, b| {
         if a[0] == b[0] { a[1].cmp(&b[1]) } else { b[0].cmp(&a[0]) }
     });
-    // println!("pp: {:?}", pp);
     res.reserve(pp.len());
-    while idx < pp.len() && pp[idx][0] == pp[0][0] {
-        res.push(pp[idx].clone()); idx += 1;
-    }
 
-    for p in idx..pp.len(){
+    for p in 0..pp.len(){
         res.insert(pp[p][1] as usize, pp[p].clone());
     }
     res
