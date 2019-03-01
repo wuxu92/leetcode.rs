@@ -49,7 +49,8 @@ mod utils;
 // mod majority_element_169;
 // mod house_robber_198;
 // mod valid_parentheses_20;
-mod decode_string_394;
+// mod decode_string_394;
+mod queue_reconstruction_by_height_406;
 
 #[cfg(test)]
 mod tests {
