@@ -50,7 +50,8 @@ mod utils;
 // mod house_robber_198;
 // mod valid_parentheses_20;
 // mod decode_string_394;
-mod queue_reconstruction_by_height_406;
+// mod queue_reconstruction_by_height_406;
+mod partition_equal_subset_sum_416;
 
 #[cfg(test)]
 mod tests {
