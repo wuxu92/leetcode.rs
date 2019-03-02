@@ -57,7 +57,7 @@ mod utils;
 // mod hamming_distance_461;
 // mod target_sum_494;
 mod subarray_sum_equals_k_560;
-mod two_sum_1;
+// mod two_sum_1;
 
 #[cfg(test)]
 mod tests {
