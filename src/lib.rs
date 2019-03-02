@@ -52,7 +52,9 @@ mod utils;
 // mod decode_string_394;
 // mod queue_reconstruction_by_height_406;
 // mod partition_equal_subset_sum_416;
-mod find_all_numbers_disappeared_in_an_array_448;
+// mod find_all_numbers_disappeared_in_an_array_448;
+// mod find_all_anagrams_in_a_string_428;
+mod hamming_distance_461;
 
 #[cfg(test)]
 mod tests {
