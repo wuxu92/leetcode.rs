@@ -55,7 +55,9 @@ mod utils;
 // mod find_all_numbers_disappeared_in_an_array_448;
 // mod find_all_anagrams_in_a_string_428;
 // mod hamming_distance_461;
-mod target_sum_494;
+// mod target_sum_494;
+mod subarray_sum_equals_k_560;
+mod two_sum_1;
 
 #[cfg(test)]
 mod tests {
