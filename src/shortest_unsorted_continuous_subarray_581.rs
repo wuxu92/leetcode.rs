@@ -61,6 +61,8 @@ pub fn find_unsorted_subarray_1(nums: Vec<i32>) -> i32 {
 }
 
 // one-passs solution
+// Finding the smallest index i such that nums[i] != min[i] and the largest index j such that nums[j] != max[j]
+// min[i] means the minium number in nums[i..len]
 #[allow(dead_code)]
 pub fn find_unsorted_subarray(nums: Vec<i32>) -> i32 {
     let (mut hi, mut lo) = (0, 0);
