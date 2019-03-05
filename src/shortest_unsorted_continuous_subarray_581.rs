@@ -26,8 +26,9 @@ pub fn find_unsorted_subarray_err_1(nums: Vec<i32>) -> i32 {
 }
 
 // find after in-creasing mininum number and the max after decreasing from last
+// two-passs solution
 #[allow(dead_code)]
-pub fn find_unsorted_subarray(nums: Vec<i32>) -> i32 {
+pub fn find_unsorted_subarray_1(nums: Vec<i32>) -> i32 {
     if nums.len() <= 1 { return 0 }
     let (mut lo, mut hi) = (0, 0);
     // find the lowest after increasing
@@ -57,6 +58,21 @@ pub fn find_unsorted_subarray(nums: Vec<i32>) -> i32 {
         if nums[idx] < flag { hi = idx; break; }
     }
     (hi - lo + 1) as i32
+}
+
+// one-passs solution
+#[allow(dead_code)]
+pub fn find_unsorted_subarray(nums: Vec<i32>) -> i32 {
+    let (mut hi, mut lo) = (0, 0);
+    let (mut max, mut min) = (std::i32::MIN, std::i32::MAX);
+
+    let len = nums.len();
+    for idx in 0..len {
+        max = if nums[idx] >= max { nums[idx] } else { hi=idx; max };
+        let lo_idx = len-idx-1;
+        min = if nums[lo_idx] <= min { nums[lo_idx] } else { lo = lo_idx; min };
+    }
+    if hi == lo { 0 } else { (hi - lo) as i32 + 1 }
 }
 
 #[cfg(test)]
@@ -90,5 +106,9 @@ mod tests {
     #[test]
     fn it_works_07() {
         assert_eq!(find_unsorted_subarray(vec![6, 5, 3, 2]), 4);
+    }
+    #[test]
+    fn it_works_08() {
+        assert_eq!(find_unsorted_subarray(vec![2, 6, 2]), 2);
     }
 }
