@@ -53,12 +53,12 @@ mod utils;
 // mod queue_reconstruction_by_height_406;
 // mod partition_equal_subset_sum_416;
 // mod find_all_numbers_disappeared_in_an_array_448;
-mod find_all_anagrams_in_a_string_428;
+// mod find_all_anagrams_in_a_string_428;
 // mod hamming_distance_461;
 // mod target_sum_494;
 // mod subarray_sum_equals_k_560;
 // mod two_sum_2;
-// mod shortest_unsorted_continuous_subarray_581;
+mod shortest_unsorted_continuous_subarray_581;
 
 #[cfg(test)]
 mod tests {
