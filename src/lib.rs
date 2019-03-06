@@ -60,7 +60,8 @@ mod utils;
 // mod two_sum_2;
 // mod shortest_unsorted_continuous_subarray_581;
 // mod task_scheduler_621;
-mod palindromic_substrings_647;
+// mod palindromic_substrings_647;
+mod jewels_and_stones_771;
 
 #[cfg(test)]
 mod tests {
