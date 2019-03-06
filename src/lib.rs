@@ -59,7 +59,8 @@ mod utils;
 // mod subarray_sum_equals_k_560;
 // mod two_sum_2;
 // mod shortest_unsorted_continuous_subarray_581;
-mod task_scheduler_621;
+// mod task_scheduler_621;
+mod palindromic_substrings_647;
 
 #[cfg(test)]
 mod tests {
