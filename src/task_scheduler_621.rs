@@ -33,6 +33,9 @@ pub fn least_interval_err_1(tasks: Vec<char>, n: i32) -> i32 {
     process(&mut counts[..], n)
 }
 
+/// With the fact that A is the task with most frequency, it should need more idles than any other
+/// tasks. In this case if we can get how many idles we need to arrange A, we will also get
+/// number of idles needed to arrange all tasks
 #[allow(dead_code)]
 pub fn least_interval(tasks: Vec<char>, n: i32) -> i32 {
     let mut counts : Vec<i32> = vec![0; 26];
