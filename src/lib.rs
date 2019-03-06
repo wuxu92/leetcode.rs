@@ -43,7 +43,7 @@ mod utils;
 // mod find_the_duplicate_number_287;
 // mod longest_increasing_subsequence_300;
 // mod best_time_to_buy_and_sell_stock_121;
-mod best_time_to_buy_and_sell_stock_ii_122;
+// mod best_time_to_buy_and_sell_stock_ii_122;
 // mod best_time_to_buy_and_sell_stock_with_cooldown_309;
 // mod coin_change_322;
 // mod counting_bits_338;
@@ -64,6 +64,7 @@ mod best_time_to_buy_and_sell_stock_ii_122;
 // mod task_scheduler_621;
 // mod palindromic_substrings_647;
 // mod jewels_and_stones_771;
+mod maximal_rectangle_85;
 
 #[cfg(test)]
 mod tests {
