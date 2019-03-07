@@ -64,7 +64,9 @@ mod utils;
 // mod task_scheduler_621;
 // mod palindromic_substrings_647;
 // mod jewels_and_stones_771;
-mod maximal_rectangle_85;
+// mod maximal_rectangle_85;
+mod largest_rectangle_in_histogram_84;
+
 
 #[cfg(test)]
 mod tests {
