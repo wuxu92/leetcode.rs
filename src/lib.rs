@@ -65,7 +65,8 @@ mod utils;
 // mod palindromic_substrings_647;
 // mod jewels_and_stones_771;
 // mod maximal_rectangle_85;
-mod largest_rectangle_in_histogram_84;
+// mod largest_rectangle_in_histogram_84;
+mod longest_consecutive_sequence_128;
 
 
 #[cfg(test)]
