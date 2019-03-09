@@ -66,7 +66,9 @@ mod utils;
 // mod jewels_and_stones_771;
 // mod maximal_rectangle_85;
 // mod largest_rectangle_in_histogram_84;
-mod longest_consecutive_sequence_128;
+// mod longest_consecutive_sequence_128;
+// mod single_number_136;
+mod trapping_rain_water_42;
 
 
 #[cfg(test)]
