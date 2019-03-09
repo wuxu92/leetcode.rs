@@ -29,6 +29,8 @@ pub fn trap_err_1(height: Vec<i32>) -> i32 {
     res
 }
 
+/// process from both left and right, process the lower one
+/// save lmax and rmax, the low one can trap (lmax or rmax) - h water
 pub fn trap(height: Vec<i32>) -> i32 {
     if height.len() == 0 { return 0 }
     let h = height;
