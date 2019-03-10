@@ -19,6 +19,19 @@ fn search_matrix(m: Vec<Vec<i32>>, target: i32) -> bool {
     false
 }
 
+// an accepted cpp solution
+// bool searchMatrix(vector<vector<int>>& matrix, int target) {
+//     if (matrix.size() == 0 || matrix[0].size() == 0) { return false; }
+//     int r = matrix.size(), l = matrix[0].size();
+//     int x = 0, y = l-1;
+//     while (x<r && y>=0) {
+//         if (matrix[x][y] == target) { return true; }
+//         if (matrix[x][y] > target) { y--; }
+//         else { x++; }
+//     }
+//     return false;
+// }
+
 #[cfg(test)]
 mod tests {
     #[allow(unused_imports)]
