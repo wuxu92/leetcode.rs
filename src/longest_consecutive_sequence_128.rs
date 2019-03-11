@@ -2,7 +2,7 @@
 
 // use a vector vec![s,e,s,e,s,e...]
 #[allow(dead_code)]
-pub fn longest_consecutive(nums: Vec<i32>) -> i32 {
+pub fn longest_consecutive_1(nums: Vec<i32>) -> i32 {
     if nums.len() == 0 { return 0 }
     let mut vec : Vec<i32> = vec![];
     for n in nums {
@@ -48,6 +48,26 @@ pub fn longest_consecutive(nums: Vec<i32>) -> i32 {
         idx += 2;
     }
     len + 1
+}
+
+// use a map save boundry
+#[allow(dead_code)]
+pub fn longest_consecutive(nums: Vec<i32>) -> i32 {
+    use std::collections::HashMap;
+    let mut res = 0;
+    let mut map : HashMap<i32, usize> = HashMap::new();
+    for n in nums {
+        if ! map.contains_key(&n) {
+            let left = *map.get(&(n-1)).unwrap_or(&0);
+            let right = *map.get(&(n+1)).unwrap_or(&0);
+            let len = left + right + 1;
+            if len > res { res =  len; }
+            map.insert(n, len);
+            map.entry(n-left as i32).and_modify(|e| *e = len);
+            map.entry(n+right as i32).and_modify(|e| *e = len);
+        }
+    }
+    res as i32
 }
 
 #[cfg(test)]
