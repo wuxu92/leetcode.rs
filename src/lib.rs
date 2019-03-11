@@ -44,7 +44,7 @@ mod utils;
 // mod longest_increasing_subsequence_300;
 // mod best_time_to_buy_and_sell_stock_121;
 // mod best_time_to_buy_and_sell_stock_ii_122;
-// mod best_time_to_buy_and_sell_stock_with_cooldown_309;
+mod best_time_to_buy_and_sell_stock_with_cooldown_309;
 // mod coin_change_322;
 // mod counting_bits_338;
 // mod top_k_frequent_elements_347;
@@ -66,12 +66,12 @@ mod utils;
 // mod jewels_and_stones_771;
 // mod maximal_rectangle_85;
 // mod largest_rectangle_in_histogram_84;
-mod longest_consecutive_sequence_128;
+// mod longest_consecutive_sequence_128;
 // mod single_number_136;
 // mod trapping_rain_water_42;
 // mod min_stack_155;
 // mod kth_largest_element_in_an_array_215;
-mod search_a_2d_matrix_ii_240;
+// mod search_a_2d_matrix_ii_240;
 
 
 #[cfg(test)]
