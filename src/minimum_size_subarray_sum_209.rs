@@ -1,7 +1,7 @@
 // @url https://leetcode.com/problems/minimum-size-subarray-sum/
 
 #[allow(dead_code)]
-pub fn min_sub_array_len(s: i32, nums: Vec<i32>) -> i32 {
+pub fn min_sub_array_len_1(s: i32, nums: Vec<i32>) -> i32 {
     let (mut start, mut res) = (0, nums.len()+1);
 
     let mut cur = 0;
@@ -18,6 +18,22 @@ pub fn min_sub_array_len(s: i32, nums: Vec<i32>) -> i32 {
                 }
                 start += 1;
             }
+        }
+    }
+    if res == nums.len() + 1 { 0 } else {res as i32}
+}
+
+// clean code
+#[allow(dead_code)]
+pub fn min_sub_array_len(s: i32, nums: Vec<i32>) -> i32 {
+    let (mut l, mut res) = (0, nums.len()+1);
+    let mut sum = 0;
+    for r in 0..nums.len() {
+        sum += nums[r];
+        while sum >= s {
+            if r-l+1 < res { res = r-l+1; }
+            sum -= nums[l];
+            l += 1;
         }
     }
     if res == nums.len() + 1 { 0 } else {res as i32}
