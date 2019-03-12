@@ -37,7 +37,7 @@ mod utils;
 // mod sudoku_solver_37;
 // mod maximal_square_221;
 // mod product_of_array_except_self_238;
-// mod sliding_window_maximum_239;
+mod sliding_window_maximum_239;
 // mod perfect_squares_279;
 // mod move_zeroes_283;
 // mod find_the_duplicate_number_287;
@@ -74,7 +74,7 @@ mod utils;
 // mod search_a_2d_matrix_ii_240;
 // mod minimum_swaps_to_make_sequences_increasing_801;
 // mod maximum_length_of_repeated_subarray_718;
-mod minimum_size_subarray_sum_209;
+// mod minimum_size_subarray_sum_209;
 
 
 #[cfg(test)]
