@@ -75,7 +75,8 @@ mod utils;
 // mod minimum_swaps_to_make_sequences_increasing_801;
 // mod maximum_length_of_repeated_subarray_718;
 // mod minimum_size_subarray_sum_209;
-mod minimum_window_substring_76;
+// mod minimum_window_substring_76;
+mod permutation_in_string_567;
 
 
 #[cfg(test)]
