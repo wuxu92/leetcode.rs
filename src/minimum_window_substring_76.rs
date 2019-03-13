@@ -8,9 +8,9 @@ pub fn min_window(s: String, t: String) -> String {
     for ch in t.bytes() {
         mark[ch as usize] += 1;
     }
-    let (mut l, mut r, mut d, mut count) = (0, 0, std::usize::MAX, t.len());
+    let (mut l, mut d, mut count) = (0, std::usize::MAX, t.len());
     let mut head=0;
-    while r < bytes.len() {
+    for r in 0..s.len() {
         let idx = bytes[r] as usize;
         if mark[idx] > 0 { count -= 1 };
         mark[idx] -= 1;
@@ -24,7 +24,6 @@ pub fn min_window(s: String, t: String) -> String {
             mark[ldx] += 1;
             l += 1;
         }
-        r += 1;
     }
     if d == std::usize::MAX { return String::new() }
     String::from(s.get(head..head+d+1).unwrap())
