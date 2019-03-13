@@ -1,7 +1,8 @@
 // @url https://leetcode.com/problems/regular-expression-matching/
 
+// Wronged
 #[allow(dead_code)]
-pub fn is_match(s: String, p: String) -> bool {
+pub fn is_match_err_1(s: String, p: String) -> bool {
     let bs : Vec<_> = s.chars().collect();
     let ps : Vec<_> = p.chars().collect();
 
@@ -42,6 +43,35 @@ pub fn is_match(s: String, p: String) -> bool {
         }
     }
     bi == s.len()
+}
+
+// DP
+#[allow(dead_code)]
+pub fn is_match(s: String, p: String) -> bool {
+    let (lens, lenp) = (s.len(), p.len());
+    if lens == 0 && lenp == 0 { return true }
+    let (bs, bp) = (s.chars().collect::<Vec<char>>(), p.chars().collect::<Vec<char>>());
+    let mut dp = vec![vec![false; lenp+1]; lens+1];
+    dp[0][0] = true;
+    for i in 1..lenp {
+        if bp[i] == '*' && dp[0][i-1] {
+            dp[0][i+1] = true;
+        }
+    }
+    for i in 0..lens { // bs
+        for j in 0..lenp { // bp
+            let (ii, jj) = (i+1, j+1);
+            if bs[i] == bp[j] || bp[j] == '.' { dp[ii][jj] = dp[i][j]; }
+            else if bp[j] == '*' {
+                if bp[j-1] != bs[i] && bp[j-1] != '.' {
+                    dp[ii][jj] = dp[ii][j];
+                } else {
+                    dp[ii][jj] = dp[i][j] || dp[ii][j] || dp[ii][j-1];
+                }
+            }
+        }
+    }
+    dp[lens][lenp]
 }
 
 #[cfg(test)]
