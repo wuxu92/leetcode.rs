@@ -18,7 +18,7 @@ pub fn max_sliding_window_1(nums: Vec<i32>, k: i32) -> Vec<i32> {
 
 // two pass solution
 #[allow(dead_code)]
-pub fn max_sliding_window(nums: Vec<i32>, k: i32) -> Vec<i32> {
+pub fn max_sliding_window_2(nums: Vec<i32>, k: i32) -> Vec<i32> {
     let len = nums.len();
     if len == 0 || k == 0 { return vec![] }
     let (mut left, mut right) = (vec![0;nums.len()], vec![0;nums.len()]);
@@ -37,6 +37,27 @@ pub fn max_sliding_window(nums: Vec<i32>, k: i32) -> Vec<i32> {
         } else {
              right[j] = if nums[j]>right[j+1] {nums[j]} else {right[j+1]};
          }
+    }
+    for i in 0..len-k+1 {
+        res.push(if right[i]>left[i+k-1] {right[i]} else {left[i+k-1]});
+    }
+    res
+}
+
+// two pass solution, speed up
+#[allow(dead_code)]
+pub fn max_sliding_window(nums: Vec<i32>, k: i32) -> Vec<i32> {
+    let len = nums.len();
+    if len == 0 || k == 0 { return vec![] }
+    let (mut left, mut right) = (nums.clone(), nums.clone());
+    let (k, mut res) = (k as usize, vec![]);
+    res.reserve(len-k+1);
+    left[0] = nums[0]; right[len-1] = nums[len-1];
+
+    for i in 1..len {
+        let j = len - 1 - i;
+        if i % k != 0 && nums[i]<left[i-1] {left[i] = left[i-1]};
+        if j % k != 0 && nums[j]<right[j+1] { right[j] = right[j+1]};
     }
     for i in 0..len-k+1 {
         res.push(if right[i]>left[i+k-1] {right[i]} else {left[i+k-1]});
