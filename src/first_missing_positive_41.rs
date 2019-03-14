@@ -2,7 +2,7 @@
 // Your algorithm should run in O(n) time and uses constant extra space.
 
 #[allow(dead_code)]
-pub fn first_missing_positive(nums: Vec<i32>) -> i32 {
+pub fn first_missing_positive_1(nums: Vec<i32>) -> i32 {
     let mut nums = nums;
     let len = nums.len() as i32;
     let mut pre;
@@ -22,6 +22,25 @@ pub fn first_missing_positive(nums: Vec<i32>) -> i32 {
     }
     len+1
 }
+
+// use swap
+#[allow(dead_code)]
+pub fn first_missing_positive(nums: Vec<i32>) -> i32 {
+    let mut nums = nums;
+    let (mut i, mut r, len) = (0, nums.len(), nums.len() as i32);
+
+    while i < r {
+        if nums[i] == i as i32 + 1 { i+=1; }
+        else if nums[i] <= 0 || nums[i] > len || nums[i] == nums[nums[i] as usize-1]{
+            r -= 1; nums.swap(i, r);
+        } else {
+            let idx = nums[i] as usize -1;
+            nums.swap(idx, i);
+        }
+    }
+    r as i32+1
+}
+
 
 
 #[cfg(test)]
@@ -57,5 +76,10 @@ mod tests {
     fn it_works_06() {
         let ins = vec![2, 1];
         assert_eq!(first_missing_positive(ins), 3);
+    }
+    #[test]
+    fn it_works_07() {
+        let ins = vec![2, 2];
+        assert_eq!(first_missing_positive(ins), 1);
     }
 }
